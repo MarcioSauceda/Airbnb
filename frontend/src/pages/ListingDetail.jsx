@@ -28,7 +28,7 @@ if (status === "error") return <div className="p-4 text-sm text-red-600">Error a
 if (!data) return <div className="p-4 text-sm text-gray-500">No encontrado.</div>;
 
 return (
-    <main className="mx-auto max-w-4xl p-4">
+    <main className="mx-auto max-w-4xl p-4 flex flex-col items-center">
     <h1 className="text-2xl font-bold">{data.titulo}</h1>
     <p className="mt-2 text-gray-700">{data.descripcion}</p>
     <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">

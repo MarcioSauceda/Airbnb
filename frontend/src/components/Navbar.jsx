@@ -1,6 +1,7 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { Globe, Menu } from "lucide-react";
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { token, logout } = useAuth();
@@ -9,11 +10,11 @@ export default function Navbar() {
   const inHostArea = location.pathname.startsWith("/host");
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur">
-      <div className="container flex items-center justify-between py-3">
+    <header className="sticky top-0 z-40 border-b bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <div className="mx-auto w-full max-w-7xl px-4 flex items-center justify-between py-3">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full bg-rose-500" />
+          <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
           <span className="text-xl font-semibold tracking-tight">airbnb</span>
         </Link>
 

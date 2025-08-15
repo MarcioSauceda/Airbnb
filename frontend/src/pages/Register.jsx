@@ -30,25 +30,25 @@ const onSubmit = async (e) => {
 };
 
   return (
-    <main className="container">
-      <div className="mx-auto w-full max-w-sm py-8">
-      <h1 className="mb-4 text-2xl font-bold">Crear cuenta</h1>
-      <form onSubmit={onSubmit} className="space-y-3">
-        <input className="w-full rounded-lg border p-2" placeholder="Nombre"
-          value={form.nombre} onChange={(e)=>update("nombre", e.target.value)} />
-        <input className="w-full rounded-lg border p-2" placeholder="Apellido"
-          value={form.apellido} onChange={(e)=>update("apellido", e.target.value)} />
-        <input className="w-full rounded-lg border p-2" type="email" placeholder="Email"
-          value={form.email} onChange={(e)=>update("email", e.target.value)} />
-        <input className="w-full rounded-lg border p-2" type="password" placeholder="Contraseña"
-          value={form.password} onChange={(e)=>update("password", e.target.value)} />
-        <button disabled={loading}
-          className="w-full rounded-lg bg-black p-2 text-white hover:opacity-90 disabled:opacity-60">
-          {loading ? "Creando..." : "Crear cuenta"}
-        </button>
-        {err && <p className="text-sm text-red-600">{err}</p>}
-      </form>
-      </div> 
+    <main className="min-h-screen bg-gradient-to-b from-rose-50/40 to-white flex items-start justify-center">
+      <div className="mx-auto w-full max-w-sm py-4 mt-12 flex flex-col justify-center">
+        <h1 className="mb-4 text-2xl font-bold">Crear cuenta</h1>
+        <form onSubmit={onSubmit} className="space-y-3">
+          <input className="w-full rounded-lg border p-2" placeholder="Nombre"
+            value={form.nombre} onChange={(e)=>update("nombre", e.target.value)} />
+          <input className="w-full rounded-lg border p-2" placeholder="Apellido"
+            value={form.apellido} onChange={(e)=>update("apellido", e.target.value)} />
+          <input className="w-full rounded-lg border p-2" type="email" placeholder="Email"
+            value={form.email} onChange={(e)=>update("email", e.target.value)} />
+          <input className="w-full rounded-lg border p-2" type="password" placeholder="Contraseña"
+            value={form.password} onChange={(e)=>update("password", e.target.value)} />
+          <button disabled={loading}
+            className="w-full rounded-lg bg-black p-2 text-white hover:opacity-90 disabled:opacity-60">
+            {loading ? "Creando..." : "Crear cuenta"}
+          </button>
+          {err && <p className="text-sm text-red-600">{err}</p>}
+        </form>
+      </div>
     </main>
   );
 }

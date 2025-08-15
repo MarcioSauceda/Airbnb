@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from '../../../assets/logo.png';
 
 export default function HostNewLayout({ title, children, onSaveExit, progress = 0 }) {
   return (
@@ -6,7 +7,7 @@ export default function HostNewLayout({ title, children, onSaveExit, progress = 
       {/* Top bar (simple) */}
       <div className="flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full bg-rose-500" />
+          <img src={logo} alt="Logo" className="h-8 w-8 object-contain" />
         </Link>
         <div className="flex items-center gap-2">
           <button className="rounded-full border px-4 py-2 text-sm hover:bg-gray-50">

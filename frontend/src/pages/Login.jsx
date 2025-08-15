@@ -27,8 +27,8 @@ const onSubmit = async (e) => {
 };
 
 return (
-    <main className="container">
-        <div className="mx-auto w-full max-w-sm py-8">
+    <main className="min-h-screen bg-gradient-to-b from-rose-50/40 to-white flex items-start justify-center">
+        <div className="mx-auto w-full max-w-sm py-4 mt-12 flex flex-col justify-center">
         <h1 className="mb-4 text-2xl font-bold">Ingresar</h1>
         <form onSubmit={onSubmit} className="space-y-3">
         <input

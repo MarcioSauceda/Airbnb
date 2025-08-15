@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-rose-50/40 to-white">
       {/* Hero + Barra de búsqueda */}
-      <section className="container pb-4 pt-6">
+  <section className="mx-auto max-w-3xl pb-4 pt-6">
         <div className="mb-6">
           <SearchBar onSubmit={(f) => console.log("buscar:", f)} />
         </div>
@@ -40,7 +40,7 @@ export default function Home() {
       </section>
 
       {/* Sección 1 */}
-      <section className="container">
+  <section className="mx-auto max-w-3xl">
         <h2 className="mb-3 text-xl font-bold">Alojamientos populares en ...</h2>
         <ListingCarousel>
           {populares.map((it) => <ListingCard key={it.id} item={it} />)}
@@ -51,7 +51,7 @@ export default function Home() {
       </section>
 
       {/* Sección 2 */}
-      <section className="container pt-6">
+  <section className="mx-auto max-w-3xl pt-6">
         <h2 className="mb-3 text-xl font-bold">Disponibles el próximo fin de semana</h2>
         <ListingCarousel>
           {disponibles.map((it) => <ListingCard key={it.id} item={it} />)}
