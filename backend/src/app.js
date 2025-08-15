@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import usersRoutes from "./modules/users/users.routes.js";
+import reservationsRoutes from "./modules/reservations/reservations.routes.js";
 import { dbHealth } from "./core/health.js";
 // src/app.js
 import { whoami, probeCatalogs } from "./core/debug-db.js";
@@ -32,13 +33,19 @@ app.use("/api/listings", listingsRoutes);
 
 app.use("/api/catalogs", catalogsRoutes);
 
+app.use("/api/reservations", reservationsRoutes);
+
 app.use((err, _req, res, _next) => {
-    console.error(err);
-    const status = err.name === "ZodError" ? 400 : 500;
-    res.status(status).json({
-        message: err.message || "Server error",
+  console.error(err);
+  const status =
+    err.status ? err.status :
+    err.name === "ZodError" ? 400 :
+    500;
+  res.status(status).json({
+    message: err.message || "Server error",
     ...(err.issues ? { issues: err.issues } : {}),
-    });
+  });
 });
+
 
 export default app;

@@ -1,6 +1,11 @@
 import app from "./app.js";
+import path from "path";
+import express from "express"
+
 import { initOracle } from "./config/oracle.js";
 import { env } from "./config/env.js";
+
+app.use("/uploads", express.static(path.resolve("uploads")));
 
 const start = async () => {
     try {
@@ -16,13 +21,4 @@ const start = async () => {
 
 start();
 
-/*import express from "express";
-
-const app = express();
-app.get("/", (req, res) => res.send("Servidor funcionando 🚀"));
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor escuchando en puerto ${PORT}`);
-});*/
 
