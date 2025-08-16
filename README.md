@@ -1,4 +1,4 @@
-# Airbnb (EL PROYCTO SE UBICA EN LA RAMA MASTER)
+# Airbnb (EL PROYECTO SE UBICA EN LA RAMA MASTER)
 Proyecto de bases de datos 1 de replicar el sitio Airbnb
 # 📦 Proyecto Airbnb – Base de Datos I
 
